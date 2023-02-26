@@ -68,11 +68,13 @@ const deleteTodo = async (req, res) => {
     // record find
     const todo = await Todo.findById(id);
     await todo.delete();
+    console.log("71 res", res);
     res.send({
       status: "success",
       message: "Todo Delete successfully",
     });
   } catch (error) {
+    console.log("77 res", res);
     res.send({
       status: "error",
       message: "Todo Delete failed",
